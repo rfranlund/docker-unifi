@@ -7,9 +7,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # Setup repository for Oracle Java 8
 
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | \
-    tee /etc/apt/sources.list.d/webupd8team-java.list && \
-  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886 &&
-  echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+    tee /etc/apt/sources.list.d/webupd8team-java.list
+RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+RUN  echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 
 # Update system
 RUN apt-get update && apt-get -y dist-upgrade
@@ -19,8 +19,8 @@ RUN apt-get -y install oracle-java8-installer wget mongodb-server jsvc
 
 # Install Unifi
 RUN wget -O /tmp/unifi_sysvinit_all.deb \
-    http://www.ubnt.com/downloads/unifi/4.8.5-9bc3d72a/unifi_sysvinit_all.deb &&
-  dpkg --install /tmp/unifi_sysvinit_all.deb
+    http://www.ubnt.com/downloads/unifi/4.8.5-9bc3d72a/unifi_sysvinit_all.deb
+RUN dpkg --install /tmp/unifi_sysvinit_all.deb
 
 # Clean up
 RUN rm -rf /tmp/unifi_sysvinit_all.deb /var/lib/unifi/*
