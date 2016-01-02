@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | \
     tee /etc/apt/sources.list.d/webupd8team-java.list
 RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-RUN  echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+RUN  echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 
 # Update system
 RUN apt-get update && apt-get -y dist-upgrade
@@ -31,9 +31,11 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 # Expose ports
 EXPOSE 8080/tcp 8443/tcp 8880/tcp 8843/tcp 3478/udp
 
+# Add start script
+ADD assets/start.sh /start.sh
+
 VOLUME ["/var/lib/unifi"]
 
 WORKDIR /var/lib/unifi
 
-ENTRYPOINT ["/usr/bin/java", "-Xmx1024M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
-
+CMD ["/start.sh"]
