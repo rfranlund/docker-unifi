@@ -18,7 +18,7 @@ release: tag_latest
 	docker push $(NAME)
 	@echo "*** Don't forget to create a tag. git tag rel-$(VERSION) && git push origin rel-$(VERSION)"
 
-run: build
+run:
 	docker run -d \
 		--net=host \
 		-p $(HTTP_PORT):$(HTTP_PORT) \
