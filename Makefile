@@ -1,5 +1,5 @@
 NAME = dayzleaper/docker-unifi
-VERSION = 4.8.6
+VERSION = 4.8.9
 
 .PHONY: all build test tag_latest release ssh
 
@@ -17,4 +17,4 @@ release: tag_latest
 	@echo "*** Don't forget to create a tag. git tag rel-$(VERSION) && git push origin rel-$(VERSION)"
 
 run: build
-	docker run -d --net=host -p 18080:18080 -p 18443:18443 -e HTTP_PORT=18080 -e HTTPS_PORT=18443 -v /share/CACHEDEV1_DATA/docker/unifi:/var/lib/unifi -v /etc/localtime:/etc/localtime:ro --name unifi-$(VERSION) $(NAME):$(VERSION)
+	docker run -d --net=host -p 18080:18080 -p 18443:18443 -e HTTP_PORT=18080 -e HTTPS_PORT=18443 -v /share/CACHEDEV1_DATA/docker/unifi:/var/lib/unifi -v /etc/localtime:/etc/localtime:ro --name unifi $(NAME):$(VERSION)

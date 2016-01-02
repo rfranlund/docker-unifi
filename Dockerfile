@@ -19,7 +19,7 @@ RUN apt-get -y install oracle-java8-installer wget mongodb-server jsvc
 
 # Install Unifi
 RUN wget -O /tmp/unifi_sysvinit_all.deb \
-    http://www.ubnt.com/downloads/unifi/4.8.6-c922c1b6/unifi_sysvinit_all.deb
+    http://www.ubnt.com/downloads/unifi/4.8.9-30617eb5/unifi_sysvinit_all.deb
 RUN dpkg --install /tmp/unifi_sysvinit_all.deb
 
 # Clean up
