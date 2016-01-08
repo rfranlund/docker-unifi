@@ -1,5 +1,5 @@
 NAME = dayzleaper/docker-unifi
-VERSION = 4.8.9
+VERSION = 4.8.10
 HTTP_PORT = 18080
 HTTPS_PORT = 18443
 
