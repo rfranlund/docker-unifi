@@ -4,6 +4,9 @@ MAINTAINER Robert Frånlund <robert.franlund@poweruser.se>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+# Update
+RUN apt-get update
+
 # Install
 RUN apt-get -y install wget mongodb-server jsvc
 

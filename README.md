@@ -1,7 +1,7 @@
 Docker container for the Ubiquiti Unifi controller
 
 You probably need to use --net=host for the auto adoption to work properly.
-This is tested using an Unifi AP Pro. If you test it with a different hardware,
+This is tested using a single Unifi AP Pro. If you test it with different hardware,
 please tell me.
 
 You can change the HTTP and HTTPS ports with the environment variables
