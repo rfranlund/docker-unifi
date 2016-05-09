@@ -12,7 +12,7 @@ RUN apt-get -y install wget mongodb-server jsvc
 
 # Install Unifi
 RUN wget -O /tmp/unifi_sysvinit_all.deb \
-    https://www.ubnt.com/downloads/unifi/5.0.1-5d94ba2599/unifi_sysvinit_all.deb
+    https://www.ubnt.com/downloads/unifi/5.0.2-umahjwv8/unifi_sysvinit_all.deb
 RUN dpkg --install /tmp/unifi_sysvinit_all.deb
 
 # Clean up
