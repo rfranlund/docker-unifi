@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get -y dist-upgrade && \
     apt-get -y install wget mongodb-server jsvc binutils && \
     wget -O /tmp/unifi_sysvinit_all.deb \
-	https://www.ubnt.com/downloads/unifi/5.0.6-wvm1vrc9/unifi_sysvinit_all.deb && \
+	https://www.ubnt.com/downloads/unifi/5.0.7-1d8af2d8/unifi_sysvinit_all.deb && \
     dpkg --install /tmp/unifi_sysvinit_all.deb && \
     rm -rf /tmp/unifi_sysvinit_all.deb /var/lib/unifi/*
 
