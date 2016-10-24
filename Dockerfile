@@ -17,7 +17,11 @@ RUN apt-get update && \
 EXPOSE 8080/tcp 8443/tcp 8880/tcp 8843/tcp 3478/udp
 
 # Add start script
-ADD assets/start.sh /start.sh
+# 2016-10-25 - Fixed strange Docker Hub bug
+# https://forums.docker.com/t/automated-docker-build-fails/22831/27
+
+ADD assets /assets
+RUN mv /assets/start.sh / && rmdir /assets
 
 VOLUME ["/var/lib/unifi"]
 
