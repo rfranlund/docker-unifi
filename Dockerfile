@@ -5,9 +5,7 @@ MAINTAINER Robert Frånlund <robert.franlund@poweruser.se>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install Unifi and dependencies
-RUN apt-get update && \
-    apt-get -y dist-upgrade && \
-    apt-get -y install wget mongodb-server jsvc binutils && \
+RUN apt-get -y install wget mongodb-server jsvc binutils && \
     wget -O /tmp/unifi_sysvinit_all.deb \
 	https://www.ubnt.com/downloads/unifi/5.4.1-79e529d7/unifi_sysvinit_all.deb && \
     dpkg --install /tmp/unifi_sysvinit_all.deb && \
