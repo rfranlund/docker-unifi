@@ -15,5 +15,5 @@ docker run -d \
 	-p 8080:8080 \
 	-p 8443:8443 \
 	-v <data_dir>:/var/lib/unifi \
-	dayzleaper/unifi:latest
+	rfranlund/unifi:latest
 ```
