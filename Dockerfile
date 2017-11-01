@@ -5,7 +5,9 @@ MAINTAINER Robert Frånlund <robert.franlund@poweruser.se>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install Unifi and dependencies
-RUN apt-get update && \
+RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list && \
+    apt-get update && \
+    apt-get -y install -t jessie-backports openjdk-8-jre-headless && \
     apt-get -y install wget mongodb-server jsvc binutils && \
     wget -O /tmp/unifi_sysvinit_all.deb \
 	https://dl.ubnt.com/unifi/5.7.3-91ad2e6240/unifi_sysvinit_all.deb && \
