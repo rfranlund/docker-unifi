@@ -10,7 +10,7 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/so
     apt-get -y install -t jessie-backports openjdk-8-jre-headless && \
     apt-get -y install wget mongodb-server jsvc binutils curl && \
     wget -O /tmp/unifi_sysvinit_all.deb \
-	https://dl.ui.com/unifi/5.10.24-fc15f0fdf1/unifi_sysvinit_all.deb && \
+	https://dl.ui.com/unifi/5.10.25-48e13746e9/unifi_sysvinit_all.deb && \
     dpkg --install /tmp/unifi_sysvinit_all.deb && \
     rm -rf /tmp/unifi_sysvinit_all.deb /var/lib/unifi/*
 
