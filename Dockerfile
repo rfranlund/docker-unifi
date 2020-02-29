@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install Unifi dependencies
 RUN apt-get update && \
-    apt-get --assume-yes --no-install-recommends install openjdk-8-jre-headless procps wget mongodb-server jsvc binutils curl
+    apt-get --assume-yes --no-install-recommends install openjdk-8-jre-headless procps wget mongodb-server jsvc binutils curl logrotate
 
 # Set URL for Unifi package
 ARG PACKAGE_URL=https://dl.ubnt.com/unifi/5.13.9-37cd925fb5/unifi_sysvinit_all.deb
