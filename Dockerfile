@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get --assume-yes --no-install-recommends install openjdk-8-jre-headless procps wget mongodb-server jsvc binutils curl logrotate
 
 # Set URL for Unifi package
-ARG PACKAGE_URL=https://dl.ui.com/unifi/6.0.23/unifi_sysvinit_all.deb
+ARG PACKAGE_URL=https://dl.ui.com/unifi/6.0.24-b200bf6446/unifi_sysvinit_all.deb
 
 RUN wget -O /tmp/unifi_sysvinit_all.deb ${PACKAGE_URL} && \
     dpkg --install /tmp/unifi_sysvinit_all.deb && \
